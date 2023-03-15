@@ -1,0 +1,45 @@
+{
+  "name": "arcoblock-code-test",
+  "version": "0.1.0",
+  "scripts": {
+    "dev": "blocklet dev",
+    "start": "vite --host",
+    "lint": "eslint src --ext .mjs,.js,.vue",
+    "lint:fix": "npm run lint -- --fix",
+    "serve": "vite preview",
+    "clean": "node scripts/build-clean.js",
+    "bundle": "npm run clean && vite build && blocklet bundle --zip --create-release",
+    "deploy": "npm run bundle && blocklet deploy .blocklet/bundle",
+    "upload": "npm run bundle && blocklet upload .blocklet/release/blocklet.json",
+    "prepare": "husky install",
+    "bump-version": "zx scripts/bump-version.mjs"
+  },
+  "dependencies": {
+    "vue": "^3.2.47"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^3.2.0",
+    "bumpp": "^8.2.1",
+    "eslint": "^8.34.0",
+    "eslint-config-prettier": "^8.6.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-vue": "^9.9.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^12.5.0",
+    "prettier": "^2.8.4",
+    "rimraf": "^3.0.2",
+    "vite": "^3.2.5",
+    "vite-plugin-blocklet": "^0.5.18",
+    "vite-plugin-node-polyfills": "^0.7.0",
+    "zx": "^7.1.1"
+  },
+  "lint-staged": {
+    "*.{mjs,js,vue}": [
+      "prettier --write",
+      "eslint --ext .js,.vue,.mjs"
+    ],
+    "*.{css,less,scss,json,graphql}": [
+      "prettier --write"
+    ]
+  }
+}
