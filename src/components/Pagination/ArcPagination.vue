@@ -1,7 +1,7 @@
 <script setup>
 import { defineProps, toRefs, computed, ref, watch } from 'vue';
-import ArcoInput from '/@/components/Input/ArcoInput.vue';
-import ArcoButton from '/@/components/Button/ArcoButton.vue';
+import ArcInput from '/@/components/Input/ArcInput.vue';
+import ArcButton from '../Button/ArcButton.vue';
 
 const props = defineProps({
   page: {
@@ -49,15 +49,15 @@ function parsePage(page) {
 
 <template>
   <nav class="inline-flex space-x-4 rounded-md items-center">
-    <ArcoButton @click="onChange(pageRef - 1)" :disabled="page <= 1">Previous</ArcoButton>
-    <ArcoInput
+    <ArcButton @click="onChange(pageRef - 1)" :disabled="page <= 1">Previous</ArcButton>
+    <ArcInput
       type="number"
       class="w-20"
       :value="pageRef"
       :disabled="count <= 0"
       @input="onInput"
-      @press-enter="onChange(pageRef)"></ArcoInput>
+      @press-enter="onChange(pageRef)"></ArcInput>
     <span class="text-sm font-semibold text-gray-500">/ {{ count }}</span>
-    <ArcoButton @click="onChange(pageRef + 1)" :disabled="page >= count">Next</ArcoButton>
+    <ArcButton @click="onChange(pageRef + 1)" :disabled="page >= count">Next</ArcButton>
   </nav>
 </template>

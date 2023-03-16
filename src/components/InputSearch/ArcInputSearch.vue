@@ -1,7 +1,7 @@
 <script setup>
 import { defineProps, ref } from 'vue';
-import ArcoInput from '/@/components/Input/ArcoInput.vue';
-import ArcoButton from '/@/components/Button/ArcoButton.vue';
+import ArcInput from '/@/components/Input/ArcInput.vue';
+import ArcButton from '../Button/ArcButton.vue';
 
 const props = defineProps({
   value: {
@@ -33,15 +33,15 @@ function onSearch() {
 
 <template>
   <div class="flex space-x-4">
-    <ArcoInput
+    <ArcInput
       class="flex-shrink w-full"
       :placeholder="props.placeholder"
       v-model:value="valueRef"
       @press-enter="onSearch"
       type="search"
       :disabled="loading" />
-    <ArcoButton class="flex-none" :loading="loading" @click="onSearch">
+    <ArcButton class="flex-none" :loading="loading" @click="onSearch">
       {{ props.searchText }}
-    </ArcoButton>
+    </ArcButton>
   </div>
 </template>

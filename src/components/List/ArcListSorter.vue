@@ -1,6 +1,6 @@
 <script setup>
 import { defineProps, toRefs } from 'vue';
-import ArcoButton from '/@/components/Button/ArcoButton.vue';
+import ArcButton from '../Button/ArcButton.vue';
 import IconUp from '/@/assets/svg/up.svg';
 import IconDown from '/@/assets/svg/down.svg';
 import DefaultSorters from './sorters';
@@ -30,7 +30,7 @@ function onChange({ order, sort }) {
 
 <template>
   <div class="flex space-x-2">
-    <ArcoButton
+    <ArcButton
       v-for="item in sorters"
       :key="item.key"
       :type="item.sort === sort && item.order === order ? 'default' : 'radio'"
@@ -38,6 +38,6 @@ function onChange({ order, sort }) {
       <span v-if="item.icon" class="text-[0.5rem] mr-1"
         ><IconUp v-if="item.icon === 'up'" /><IconDown v-if="item.icon === 'down'" /></span
       ><span>{{ item.label }}</span>
-    </ArcoButton>
+    </ArcButton>
   </div>
 </template>

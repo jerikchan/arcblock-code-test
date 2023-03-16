@@ -3,7 +3,7 @@ import { defineProps, toRefs, computed, watch, ref } from 'vue';
 
 import { dayjs } from '/@/utils/dayjs';
 import ArcPagination from '/@/components/Pagination/ArcPagination.vue';
-import ArcoButton from '/@/components/Button/ArcoButton.vue';
+import ArcButton from '../Button/ArcButton.vue';
 
 import IconCoinbase from '/@/assets/svg/coinbase.svg';
 import IconCollapse from '/@/assets/svg/collapse.svg';
@@ -88,9 +88,9 @@ function onToggle() {
 <template>
   <div class="relative text-right pb-12">
     <div class="flex space-x-2 mb-4 text-left pt-2 overflow-x-auto">
-      <ArcoButton @click="onToggle" class="min-h-[2rem]"
+      <ArcButton @click="onToggle" class="min-h-[2rem]"
         ><IconCollapse v-if="!allCollapse" /><IconUnCollapse v-else
-      /></ArcoButton>
+      /></ArcButton>
       <ArcListSorter v-bind="sorterProps" @change="onSortChange" />
     </div>
     <div class="sm:rounded-lg shadow overflow-hidden text-sm font-medium text-gray-500 relativez-10 mb-4 text-left">
