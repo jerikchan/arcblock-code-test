@@ -40,6 +40,7 @@
     "vite-plugin-blocklet": "^0.5.18",
     "vite-plugin-node-polyfills": "^0.7.0",
     "vite-svg-loader": "^4.0.0",
+    "vitest": "^0.29.3",
     "zx": "^7.1.1"
   },
   "lint-staged": {
