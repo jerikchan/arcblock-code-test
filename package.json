@@ -13,8 +13,8 @@
     "upload": "npm run bundle && blocklet upload .blocklet/release/blocklet.json",
     "prepare": "husky install",
     "bump-version": "zx scripts/bump-version.mjs",
-    "test": "vitest --config vite.config.js",
-    "coverage": "vitest run --coverage --config ./vite.config.js"
+    "test": "vitest",
+    "coverage": "vitest run --coverage"
   },
   "dependencies": {
     "@vueuse/core": "^9.13.0",
@@ -27,6 +27,7 @@
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^3.2.0",
+    "@vitest/coverage-c8": "^0.29.3",
     "@vue/test-utils": "^2.3.1",
     "bumpp": "^8.2.1",
     "eslint": "^8.34.0",

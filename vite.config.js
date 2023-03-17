@@ -1,4 +1,3 @@
-/// <reference types="vitest" />
 import { resolve } from 'path';
 
 import { defineConfig } from 'vite';
@@ -12,22 +11,17 @@ function pathResolve(dir) {
 }
 
 // https://vitejs.dev/config/
-export default defineConfig(() => {
-  return {
-    plugins: [vue(), createBlockletPlugin(), nodePolyfills({ protocolImports: true }), svgLoader()],
-    define: {
-      global: 'window',
-    },
-    resolve: {
-      alias: [
-        {
-          find: /\/@\//,
-          replacement: pathResolve('src'),
-        },
-      ],
-    },
-    test: {
-      environment: 'happy-dom',
-    },
-  };
+export default defineConfig({
+  plugins: [vue(), createBlockletPlugin(), nodePolyfills({ protocolImports: true }), svgLoader()],
+  resolve: {
+    alias: [
+      {
+        find: /\/@\//,
+        replacement: pathResolve('src'),
+      },
+    ],
+  },
+  test: {
+    environment: 'happy-dom',
+  },
 });
